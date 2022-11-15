@@ -1,0 +1,36 @@
+{
+  "home": {
+    "welcome": "Hello",
+    "tusNotas": "Your notes will appear here"
+  },
+  "login": {
+    "iniciarSesion": "Sign In",
+    "correoElec": "Email",
+    "password": "Password",
+    "forgetPassword": "Did you forget your password?",
+    "notAccount": "Do not you have an account yet?",
+    "register": "Sign Up"
+  },
+  "recoverpassword": {
+    "restaurar": "Recovery Password",
+    "nota": "Enter your email to recover your Password",
+    "enviar": "Send"
+  },
+  "secondstep": {
+    "onemorestep": "One more step ...",
+    "termsCondition": "By registering you accept the terms and conditions of NiceMemo"
+  },
+  "profile": {
+    "myaccount": "My Account",
+    "textdate": "Joined since ",
+    "privacyPolicy": "Privacy Policies",
+    "logout": "Logout"
+  },
+  "personalInformation": {
+    "personalinformation": "Personal Information",
+    "user": "User",
+    "email": "Email",
+    "password": "Password",
+    "savechanges": "Save Changes"
+  }
+}

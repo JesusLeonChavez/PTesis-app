@@ -1,0 +1,36 @@
+{
+  "home": {
+    "welcome": "hola",
+    "tusNotas": "¡Tus notas aparecerán aquí!"
+  },
+  "login": {
+    "iniciarSesion": "Iniciar Sesion",
+    "correoElec": "Correo Electronico",
+    "password": "Contraseña",
+    "forgetPassword": "¿Olvidaste tu contraseña?",
+    "notAccount": "¿Aun no tienes una cuenta?",
+    "register": "Registrarse"
+  },
+  "recoverpassword": {
+    "restaurar": "Restaurar Contraseña",
+    "nota": "Ingresa tu correo electrónico para poder recuperar tu Contraseña",
+    "enviar": "Enviar"
+  },
+  "secondstep": {
+    "onemorestep": "Un paso más ...",
+    "termsCondition": "Al registrarse acepta los terminos y condiciones de NiceMemo"
+  },
+  "profile": {
+    "myaccount": "Mi Cuenta",
+    "textdate": "Unida desde el ",
+    "privacyPolicy": "Políticas de Privacidad",
+    "logout": "Cerrar Sesión"
+  },
+  "personalInformation": {
+    "personalinformation": "Información Personal",
+    "user": "Usuario",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "savechanges": "Guardar cambios"
+  }
+}

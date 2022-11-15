@@ -1,0 +1,109 @@
+name: EAS PIPELINE
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches: [builds]
+
+jobs:
+  # TODO: activate the permission for read the token in settings > actions > general. More information: https://www.damirscorner.com/blog/posts/20220506-TokenPermissionsForGithubActions.html
+  # avoid_redundancy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Cancel previous redundant builds
+  #       uses: styfle/cancel-workflow-action@0.9.1
+  #       with:
+  #         access_token: ${{ github.token }}
+
+  check_types:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run check-types
+        run: yarn ct
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run linter
+        run: yarn lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run tests
+        run: yarn test:all
+
+  build:
+    needs: [check_types, lint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        if: ${{ github.event_name == 'push' }}
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js 16.x
+        if: ${{ github.event_name == 'push' }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+
+      # - name: Setup Expo and EAS
+      #   if: ${{ github.event_name == 'push' }}
+      #   uses: expo/expo-github-action@v7
+      #   with:
+      #     expo-version: 5.x
+      #     token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install dependencies
+        if: ${{ github.event_name == 'push' }}
+        run: yarn install --frozen-lockfile
+
+      - name: Build android and ios binaries
+        if: ${{ github.event_name == 'push' }}
+        run: yarn test:all
+
+      # - name: Build android on EAS
+      #   if: ${{ github.event_name == 'push' }}
+      #   run: npx eas build --profile dev --platform android --non-interactive
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}

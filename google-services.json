@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "959930620631",
+    "project_id": "nice-memo",
+    "storage_bucket": "nice-memo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959930620631:android:8959c56c41fd490266ae92",
+        "android_client_info": {
+          "package_name": "com.kioshiokamoto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959930620631-m6sl3mhcj6j6ouplgdfn11j9iv0qjkjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfJd5rt4TadGlCVQdc14BWVrWw_uCIXGw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959930620631-m6sl3mhcj6j6ouplgdfn11j9iv0qjkjg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "959930620631-d8f6hbbt4o4mm4jq1lqop1fdnlub38v5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.devdaily.nicememo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

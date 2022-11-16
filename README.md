@@ -2,30 +2,30 @@
 
 # Nice Memo APP (WIP)
 
-¡Aplicación móvil de notas compartidas!
+¡Aplicación móvil para reservar citas!
 
-Esta aplicación permitirá a los estudiantes poder generar notas de diferentes categorias, brindandoles la facilidad de compartirlas con sus amigos y asi poder mejorar su performance escolar.
+Esta aplicación permitirá a con discapacidad motora poder realizar una cita sin la necesidad de estar presencialmente en un centro medico.
 
 ## Tech Stack
 
-**Stack:** React native, Expo, Firebase
+**Stack:** React native, Expo
 
 ## Screenshots
 
-![App Screenshot](https://cdn.discordapp.com/attachments/719371308634472460/990078193060937738/nice-memo.png)
+![App Screenshot]()
 
 ## Ejecutar localmente
 
 Clonar proyecto
 
 ```bash
-  git clone https://github.com/kioshiokamoto/nice-memo
+  git clone https://github.com/JesusLeonChavez/PTesis-app.git
 ```
 
 Ir a ruta de proyecto
 
 ```bash
-  cd nice-memo
+  cd PTesis-app
 ```
 
 Instalar dependencias
